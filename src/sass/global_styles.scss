@@ -1,0 +1,59 @@
+*{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	outline: 0;
+}
+
+// colors
+$gray : #f6f6f8;
+$primary : #e3774c;
+$link : #4088FC;
+$black: #1a1a1a;
+
+.container {
+	max-width: 1300px;
+	margin: 0 auto;
+	padding: 0px 15px;
+}
+
+.menuBtn {
+	cursor: pointer;
+	width: 50px;
+	height: 50px;
+	display: flex;
+	align-items: center;
+	justify-content: flex-end;
+
+	div, div:before, div:after {
+		background: $black;
+		border-radius: 10px;
+		width: 40px;
+		height: 5px;
+		transition: all 0.15s linear;
+	}
+
+	div:before, div:after {
+		content: "";
+		position: absolute;
+	}
+
+	div:before {
+		transform: translateY(-200%);
+	}
+	div:after {
+		transform: translateY(200%);
+	}
+
+	&.open div {
+		background: transparent;
+	}
+
+	&.open div:before {
+		transform: rotate(45deg);
+	}
+
+	&.open div:after {
+		transform: rotate(-45deg);
+	}
+}
