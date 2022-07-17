@@ -34,7 +34,13 @@
 }
 
 nav {
+	position: sticky;
 	background: #fff;
+	position: sticky;
+	top: 0;
+	left: 0;
+	z-index: 99999;
+	box-shadow: 0 6px 36px rgb(0 0 0 / 9%);
 
 	.container {
 		display: flex;
@@ -66,6 +72,7 @@ nav {
 						position: relative;
 						z-index: 5;
 						transition: color 0.4s;
+						letter-spacing: 1px;
 
 						&::after {
 							content: "";
@@ -98,25 +105,44 @@ nav {
 					justify-content: flex-start;
 					position: absolute;
 					top: 0px;
-					width: 500px;
-					
+					width: 580px;
 					overflow: hidden;
 					left: -5000px;
 					background: $gray;
 					transition: left 0.2s linear;
 
+					@media screen and (max-width: 680px) {
+						width: 500px;
+					}
+
 					@media screen and (max-width: 580px) {
-						width: 300px;
+						width: 450px;
+					}
+
+					@media screen and (max-width: 520px) {
+						width: 400px;
+					}
+
+					@media screen and (max-width: 480px) {
+						width: 350px;
 					}
 
 					@media screen and (max-width: 420px) {
-						width: 200px;
+						width: 300px;
+					}
+
+					@media screen and (max-width: 380px) {
+						width: 280px;
+					}
+
+					@media screen and (max-width: 350px) {
+						width: 250px;
 					}
 
 					li {
 						a {
-							height: 50px;
-							padding: 8px 20px;
+							height: 60px;
+							padding: 30px 20px;
 						}
 					}
 

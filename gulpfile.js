@@ -117,7 +117,7 @@ function watch () {
 		server: {
 			baseDir: path
 		},
-		tunnel: true,
+		// tunnel: true,
 		online: true
 	});
 

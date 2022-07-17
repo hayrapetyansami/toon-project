@@ -8,13 +8,7 @@
 	"build" : "gulp build",
 	"watch" : "gulp watch"
   },
-  "keywords": [
-    "Armenia",
-    "JavaScript",
-    "Front-End",
-    "Sami",
-    "Անվճար_Ծրագրավորում"
-  ],
+  "keywords": ["Անվճար_Ծրագրավորում"],
   "author": "Sami Hayrapetyan",
   "license": "ISC",
   "devDependencies": {
