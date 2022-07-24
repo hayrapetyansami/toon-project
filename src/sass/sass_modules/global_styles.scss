@@ -9,6 +9,7 @@
 $gray : #f6f6f8;
 // $primary : #e3774c;
 $primary : #f55d22;
+$primaryHover : #dd4b11;
 $link : #4088FC;
 $black: #1a1a1a;
 $br : 16px;
@@ -93,4 +94,92 @@ $verySmallMobile: 420px;
 		font-size: 20px;
 	}
 
+}
+
+.item {
+	background: $gray;
+	border-radius: $br;
+	overflow: hidden;
+	box-shadow: 0px 0px 20px 2px #ccc;
+	max-width: 300px;
+	.item_header {
+		a {
+			display: block;
+			// max-width: 300px;
+			max-height: 210px;
+			overflow: hidden;
+
+			img {
+				display: block;
+				width: 100%;
+				min-height: 210px;
+				object-fit: cover;
+				transition: all 0.2s;
+			}
+		}
+	}
+	.item_footer {
+		padding: 7px;
+		h3 {
+			margin-top: 10px;
+			margin-bottom: 10px;
+			a {
+				color: $black
+			}
+		}
+
+		p {
+			color: #5d5d5d;
+			font-size: 14px;
+		}
+
+		.add {
+			display: block;
+			text-align: center;
+			border-radius: $br;
+			background: $primary;
+			color: #fff;
+			padding: 7px 14px;
+			font-size: 14px;
+			margin-top: 20px;
+			position: relative;
+			overflow: hidden;
+
+			span {
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				position: absolute;
+				top: 500px;
+				left: 0;
+				width: 100%;
+				height: 100%;
+				background: $primaryHover;
+				transition:top 0.2s;
+			}
+
+			&:hover {
+				span {
+					top: 0
+				}
+			}
+		}
+	}
+
+	&:hover {
+		.item_header {
+			a {
+				img {
+					transform: scale(1.2);
+				}
+			}
+		}
+		.item_footer {
+			h3 {
+				a {
+					color: $primary;
+				}
+			}
+		}
+	}
 }

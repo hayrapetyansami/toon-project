@@ -7,7 +7,7 @@
 		display: flex;
 		align-items: center;
 		justify-content: space-between;
-		min-height: 60px;
+		min-height: 50px;
 		width: 100%;
 	}
 	.top_nav__block {
@@ -17,8 +17,8 @@
 			text-decoration: none;
 			margin-right: 15px;
 			svg {
-				width: 45px;
-				height: 45px;
+				width: 30px;
+				height: 30px;
 				fill: $primary;
 			}
 
