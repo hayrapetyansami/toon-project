@@ -1,12 +1,126 @@
 main {
-	height: 3500px;
-
 	.items_wrapper {
 		display: grid;
 		grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
 		grid-gap: 20px;
 		.item {
 			max-width: 100%;
+		}
+	}
+
+	.product_page {
+		margin-top: 50px;
+		.product {
+			display: flex;
+			align-items: flex-start;
+			gap: 100px;
+			.product_imgs {
+				display: flex;
+				flex-direction: row;
+				flex-wrap: wrap;
+				flex-basis: 60%;
+
+				a {
+					display: block;
+					width: calc(100%/4);
+					max-height: 200px;
+					min-height: 200px;
+					overflow: hidden;
+
+					img {
+						display: block;
+						width: 100%;
+						height: 100%;
+						object-fit: cover;
+						object-position: center center;
+						opacity: 0.3;
+						transition: opacity 0.3s;
+					}
+
+					&:nth-child(1) {
+						width: 100%;
+						min-height: 400px;
+						img {
+							opacity: 1;
+						}
+					}
+
+					&:hover {
+						img {
+							opacity: 1;
+						}
+					}
+				}
+			}
+
+			.product_options_and_basket {
+				flex-basis: 40%;
+				.product_options {
+					.product_option{
+						display: flex;
+						justify-content: space-between;
+						padding-bottom: 10px;
+						border-bottom: 2px solid #ddd;
+						margin-bottom: 10px;
+						.product_option__title {
+							font-weight: bold;
+						}
+	
+						.product_option__value {
+							font-style: italic;
+						}
+					}
+				}
+				#about_product {
+					color: #5d5d5d;
+					margin: 15px 0px;
+					font-size: 15px;
+					letter-spacing: 1px;
+					font-style: italic;
+				}
+
+				#product_price {
+					font-weight: bold;
+					margin: 10px 0px 35px 0px;
+					letter-spacing: 1px;
+					color: #1a1a1a;
+				}
+
+				.basket_block {
+					display: flex;
+					align-items: center;
+					justify-content: space-between;
+					a {
+						display: block;
+						border-radius: $br;
+					}
+
+					#buy {
+						background: $primary;
+						color: #fff;
+						transition: 0.3s;
+						padding: 10px 45px;
+
+						&:hover {
+							background: $primaryHover;
+						}
+					}
+
+					#credit {
+						color: rgb(0, 155, 0);
+						font-weight: bold;
+					}
+				}
+			}
+			
+
+			@media screen and (max-width: $bigMobile) {
+				flex-wrap: wrap;
+
+				.product_imgs, .product_options_and_basket {
+					flex-basis: 100%;
+				}
+			}
 		}
 	}
 }

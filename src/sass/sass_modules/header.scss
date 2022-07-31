@@ -1,200 +1,225 @@
 @import "global_styles";
 
 header {
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	align-content: center;
-	flex-wrap: wrap;
-	background-repeat: no-repeat;
-	background-size: 100%;
-	background-position: center center;
-	background-attachment: fixed;
-	position: relative;
-	height: 90vh;
-	overflow: hidden;
-
-	@media screen and (max-width: 1680px){
-		background-size: cover;
-	}
-	&::after {
-		content: "";
-		position: absolute;
-		top: 0;
-		left: 0;
-		width: 100%;
-		height: 100%;
-		background: #300d01af
-	}
-
-	.header_content {
+	&#home_header, &#product_header {
 		display: flex;
-		flex-flow: column;
-		align-content: center;
+		justify-content: center;
 		align-items: center;
+		align-content: center;
+		flex-wrap: wrap;
+		background-repeat: no-repeat;
+		background-size: 100%;
+		background-position: center center;
+		background-attachment: fixed;
 		position: relative;
-		color: #fff;
-		z-index: 55;
-		text-align: center;
-		width: 100%;
-
-		h1 {
-			text-transform: uppercase;
-			font-size: 55px;
-			letter-spacing: 2px;
+		overflow: hidden;
+	
+		@media screen and (max-width: 1680px){
+			background-size: cover;
 		}
-
-		p {
-			line-height: 30px;
-			margin-bottom: 20px;
-			max-width: 600px;
+		&::after {
+			content: "";
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			background: #300d01af
 		}
-
-		.header_content__buttons {
+	
+		.header_content {
 			display: flex;
-
-			a, button {
-				display: block;
-				padding:15px 40px;
-				border-radius: $br;
-				border: none;
-				cursor: pointer;
-				letter-spacing: 1px;
-				position: relative;
-				overflow: hidden;
-			}
-
-			a {
-				color: #fff;
-				background: $primary;
-				margin-right: 20px;
-				transition: background 0.3s;
-
-				&:hover {
-					background: $primaryHover;
-				}
-			}
-
-			button {
-				color: #fff;
-				border: 2px solid #fff;
-				background: transparent;
-				font-size: 16px;
+			flex-flow: column;
+			align-content: center;
+			align-items: center;
+			position: relative;
+			color: #fff;
+			z-index: 55;
+			text-align: center;
+			width: 100%;
+			padding: 0px 20px;
+	
+			h1 {
 				text-transform: uppercase;
-
-				&::before {
-					content: "";
-					position: absolute;
-					top: 0;
-					left: 0;
-					width: 0%;
-					height: 100%;
-					background: rgba(255, 255, 255, 0.316);
-					transition: width 0.2s;
-					z-index: -1;
+				font-size: 55px;
+				letter-spacing: 2px;
+			}
+	
+			p {
+				line-height: 30px;
+				margin-bottom: 20px;
+				max-width: 600px;
+			}
+	
+			.header_content__buttons {
+				display: flex;
+	
+				a, button {
+					display: block;
+					padding:15px 40px;
+					border-radius: $br;
+					border: none;
+					cursor: pointer;
+					letter-spacing: 1px;
+					position: relative;
+					overflow: hidden;
 				}
-
-				&:hover  {
+	
+				a {
+					color: #fff;
+					background: $primary;
+					margin-right: 20px;
+					transition: background 0.3s;
+	
+					&:hover {
+						background: $primaryHover;
+					}
+				}
+	
+				button {
+					color: #fff;
+					border: 2px solid #fff;
+					background: transparent;
+					font-size: 16px;
+					text-transform: uppercase;
+	
 					&::before {
-						width: 100%;
+						content: "";
+						position: absolute;
+						top: 0;
+						left: 0;
+						width: 0%;
+						height: 100%;
+						background: rgba(255, 255, 255, 0.316);
+						transition: width 0.2s;
 						z-index: -1;
+					}
+	
+					&:hover  {
+						&::before {
+							width: 100%;
+							z-index: -1;
+						}
 					}
 				}
 			}
 		}
-	}
-
-	.scrollDown {
-		width: 100%;
-		position: relative;
-		text-align: center;
-		z-index: 55;
-		cursor: pointer;
-		top: 180px;
-		animation: chgitem 0.6s linear alternate infinite;
-
-		svg {
-			width: 70px;
-			height: 70px;
-			fill:#fff;
-		}
-
-		@keyframes chgitem {
-			from {
-				top: 170px;;
-			}
-
-			to {
-				top: 210px;
-			}
-		}
-	}
-
-	@media screen and (max-width: 768px) {
-		height: 600px;
-
+	
 		.scrollDown {
-			top: 60px !important;
-			animation-play-state: paused;
+			width: 100%;
+			position: relative;
+			text-align: center;
+			z-index: 55;
+			cursor: pointer;
+			top: 180px;
+			animation: chgitem 0.6s linear alternate infinite;
+	
+			svg {
+				width: 70px;
+				height: 70px;
+				fill:#fff;
+			}
+	
+			@keyframes chgitem {
+				from {
+					top: 170px;;
+				}
+	
+				to {
+					top: 210px;
+				}
+			}
+		}
+	
+		@media screen and (max-width: 768px) {
+			height: 600px;
+	
+			.scrollDown {
+				top: 60px !important;
+				animation-play-state: paused;
+			}
+	
+			.header_content {
+				h1 {
+					font-size: 44px;
+				}
+	
+				p {
+					font-size: 16px;
+				}
+			}
+		}
+		@media screen and (max-width: 630px) {
+			padding: 10px;
+			.header_content {
+				h1 {
+					font-size: 35px;
+				}
+	
+				p {
+					font-size: 15px;
+				}
+	
+				.header_content__buttons {
+					a, button {
+						padding: 10px 25px;
+					}
+				}
+			}
+		}
+		@media screen and (max-width: 580px) {
+			.header_content {
+				.header_content__buttons {
+					flex-flow: column;
+					align-items: center;
+					align-content: center;
+					a, button {
+						padding: 10px 25px;
+						margin-right: unset;
+						margin-bottom: 15px;
+					}
+				}
+			}
+		}
+		@media screen and (max-width: 510px) {
+			.header_content {
+				h1 {
+					font-size: 30px;
+				}
+	
+				p {
+					font-size: 14px;
+				}
+	
+				.header_content__buttons {
+					a, button {
+						padding: 10px 15px;
+						font-size: 14px;
+					}
+				}
+			}
 		}
 
-		.header_content {
-			h1 {
-				font-size: 44px;
-			}
-
-			p {
-				font-size: 16px;
-			}
-		}
-	}
-	@media screen and (max-width: 630px) {
-		padding: 10px;
-		.header_content {
-			h1 {
-				font-size: 35px;
-			}
-
-			p {
-				font-size: 15px;
-			}
-
-			.header_content__buttons {
-				a, button {
-					padding: 10px 25px;
+		@media screen and (max-width: 420px) {
+			.header_content {
+				h1 {
+					font-size: 22px;
 				}
 			}
 		}
 	}
-	@media screen and (max-width: 580px) {
-		.header_content {
-			.header_content__buttons {
-				flex-flow: column;
-				align-items: center;
-				align-content: center;
-				a, button {
-					padding: 10px 25px;
-					margin-right: unset;
-					margin-bottom: 15px;
-				}
-			}
-		}
+	&#home_header {
+		height: 90vh;
 	}
-	@media screen and (max-width: 510px) {
+
+	&#product_header {
+		height: 200px;
+		max-height: 200px;
+		min-height: 200px;
+
 		.header_content {
 			h1 {
 				font-size: 30px;
-			}
-
-			p {
-				font-size: 14px;
-			}
-
-			.header_content__buttons {
-				a, button {
-					padding: 10px 15px;
-					font-size: 14px;
-				}
 			}
 		}
 	}

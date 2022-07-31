@@ -43,8 +43,7 @@ window.addEventListener("DOMContentLoaded", () => {
 				.textContent.trim()
 			);
 		})
-
-
+		
 		itemTitle.forEach(title => {
 			if (title.textContent.length >= 20) {
 				title.textContent = title.textContent.slice(0, 20) + "...";
