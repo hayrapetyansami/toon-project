@@ -13,7 +13,7 @@ window.addEventListener("DOMContentLoaded", () => {
 			navMenu.classList.add("active_nav");
 			topNavSwitch.innerHTML = "";
 			topNavSwitch.insertAdjacentHTML("afterbegin", logo.innerHTML);
-			
+
 		} else {
 			menuBtn.classList.remove("open");
 			navMenu.removeAttribute("class");
@@ -29,7 +29,7 @@ window.addEventListener("DOMContentLoaded", () => {
 				behavior: 'smooth'
 			});
 		});
-	} catch{}
+	} catch {}
 
 	try {
 		const item = document.querySelectorAll(".item");
@@ -37,18 +37,38 @@ window.addEventListener("DOMContentLoaded", () => {
 
 		item.forEach(item => {
 			item.setAttribute(
-				"title", 
+				"title",
 				item.children[1]
 				.children[0]
 				.textContent.trim()
 			);
 		})
-		
+
 		itemTitle.forEach(title => {
 			if (title.textContent.length >= 20) {
 				title.textContent = title.textContent.slice(0, 20) + "...";
 			}
 		});
-		
+
+	} catch {}
+
+	try {
+		new Swiper(".swiper-container", {
+			slidesPerView: 3,
+			spaceBetween: 30,
+			loop: true,
+			navigation: {
+				nextEl: ".swiper-button-next",
+				prevEl: ".swiper-button-prev",
+			},
+			breakpoints: {
+				768:{
+					slidesPerView: 1,
+				},
+				1024:{
+					slidesPerView: 2,
+				}
+			}
+		});
 	} catch {}
 });

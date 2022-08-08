@@ -3,8 +3,36 @@ main {
 		display: grid;
 		grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
 		grid-gap: 20px;
+		margin-bottom: 60px;
 		.item {
 			max-width: 100%;
+		}
+	}
+	.out_team {
+		.our_team__member {
+			text-align: center;
+			.otm_img {
+				overflow: hidden;
+				border-radius: 15px;
+				margin-bottom: 15px;
+				img {
+					display: block;
+					width: 100%;
+					height: 320px;
+					object-fit: cover;
+					object-position: center center;
+				}
+			}
+
+			h3 {
+				color: $primary;
+				margin-bottom: 8px;
+			}
+
+			p {
+				font-size: 13px;
+				font-style: italic;
+			}
 		}
 	}
 
@@ -113,10 +141,8 @@ main {
 				}
 			}
 			
-
 			@media screen and (max-width: $bigMobile) {
 				flex-wrap: wrap;
-
 				.product_imgs, .product_options_and_basket {
 					flex-basis: 100%;
 				}
