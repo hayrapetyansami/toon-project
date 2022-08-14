@@ -35,6 +35,33 @@ main {
 			}
 		}
 	}
+	#lightgallery {
+		display: grid;
+		grid-template-columns: repeat(auto-fill, minmax(40%, 1fr));
+		grid-gap: 20px;
+		a {
+			img {
+				display: block;
+				border-radius: $br;
+				width: 100%;
+				height: 100%;
+				object-fit: cover;
+				object-position: center center;
+				filter:grayscale(30%);
+			}
+
+			&:hover {
+				img {
+					filter: grayscale(0%);
+					filter:saturate(170%);
+				}
+			}
+		}
+
+		@media screen and (max-width: 640px) {
+			grid-template-columns: repeat(auto-fill, minmax(100%, 1fr));
+		}
+	}
 
 	.product_page {
 		margin-top: 50px;
