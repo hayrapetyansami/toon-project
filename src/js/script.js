@@ -71,4 +71,23 @@ window.addEventListener("DOMContentLoaded", () => {
 			}
 		});
 	} catch {}
+
+	try {
+		const tabBtns = document.querySelectorAll('.tab_header__btn');
+		const tabContents = document.querySelectorAll('.tab_body__content');
+
+		tabBtns[0].classList.add("tab_header__btn-active");
+		tabContents[0].classList.add("tab_body__content-active");
+
+		for (let i = 0; i < tabBtns.length; i++) {
+			tabBtns[i].addEventListener("click", () => {
+				for (let x = 0; x < tabBtns.length; x++) {
+					tabBtns[x].classList.remove("tab_header__btn-active");
+					tabContents[x].classList.remove("tab_body__content-active");
+				}
+				tabBtns[i].classList.add("tab_header__btn-active");
+				tabContents[i].classList.add("tab_body__content-active");
+			});
+		}
+	} catch {}
 });

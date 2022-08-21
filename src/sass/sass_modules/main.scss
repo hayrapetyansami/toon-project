@@ -62,7 +62,92 @@ main {
 			grid-template-columns: repeat(auto-fill, minmax(100%, 1fr));
 		}
 	}
+	.tab_container {
+		.tab_header {
+			display: flex;
+			margin-bottom: 20px;
+			.tab_header__btn {
+				flex-basis: 25%;
+				padding: 15px 25px;
+				cursor: pointer;
+				background: $primary;
+				color: #fff;
+				text-align: center;
 
+				&:first-child {
+					border-radius: $br 0px 0px $br;
+				}
+
+				&:last-child {
+					border-radius: 0px $br $br 0px;
+				}
+
+				&.tab_header__btn-active{
+					background: $primaryHover;
+				}
+			}
+
+			@media screen and (max-width: 768px) {
+				flex-wrap: wrap;
+				.tab_header__btn {
+					flex-basis: 50%;
+
+					&:nth-child(1){
+						border-radius: $br 0px 0px 0px;
+					}
+					&:nth-child(2){
+						border-radius: 0px $br 0px 0px;
+					}
+					&:nth-child(3){
+						border-radius: 0px 0px 0px $br;
+					}
+					&:nth-child(4){
+						border-radius: 0px 0px $br 0px;
+					}
+				}
+			}
+
+			@media screen and (max-width: 520px) {
+				.tab_header__btn {
+					flex-basis: 100%;
+
+					&:nth-child(1){
+						border-radius: $br $br 0px 0px;
+					}
+					&:nth-child(2){
+						border-radius: 0px 0px 0px 0px;
+					}
+					&:nth-child(3){
+						border-radius: 0px 0px 0px 0px;
+					}
+					&:nth-child(4){
+						border-radius: 0px 0px $br $br;
+					}
+				}
+			}
+		}
+
+		.tab_body {
+			.tab_body__content {
+				display: none;
+
+				&.tab_body__content-active{
+					display: block;
+				}
+				h3 {
+					color: $primary;
+					margin-bottom: 8px;
+				}
+
+				p{
+					color: #5d5d5d
+				}
+			}
+		}
+	}
+
+
+	// other pages
 	.product_page {
 		margin-top: 50px;
 		.product {
